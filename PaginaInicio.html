@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="iPadVersionPaginaInicio.css">
+    <link rel="stylesheet" href="PaginaInicioPC.css">
+    <title>Sistema de pedidos</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;}
+
+        /*version 7 pulgadas*/   
+ @media (max-width:600px) { 
+        img{
+            height: 10rem;
+            width: 10rem;
+            display: flex;
+            margin-left: 40%;
+            border-radius: 100px;}
+            
+        head{
+            width: 600px;}
+        
+        header{
+            background-image: url("food-pizza-wallpaper-preview.jpg");
+            background-position: center;
+            background-size: cover;
+            width: 600px;}
+            
+        nav.encabezado{
+            background-color: darkred;
+            height: 40px;
+            width: 600px;
+            display: flex;
+            align-items: center;}
+       
+        nav.encabezado > ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            max-width: 600px;}
+
+        li {
+            text-decoration: none;
+            color: white;
+            position: relative;
+            display: block;
+            max-width: 600px;}
+        
+        li>a:focus{
+            background-color: white;
+            color: black;
+            border-radius: 10px;}
+        
+      
+        .encabezado ul li ul{
+            display: flex;
+            flex-direction: column;
+            display: block; 
+            position: absolute;
+            background-color:darkred;
+            display: none;
+            justify-content: center;
+            border-radius: 10px;}
+    
+        
+        .encabezado ul li:hover > ul{
+            display: block;
+            width: 130px;}
+        
+        .encabezado ul li ul li{
+            position: relative;}
+        
+        .encabezado ul li:focus > ul{
+            background-color: darkred;}
+        
+        .Gourmet{
+            top: 10;
+            left: 130px;
+            position: absolute;}
+        
+        .Supergustos{
+            top: 10;
+            left: 130px;
+            position: absolute;}
+        
+        .Simples{
+            top: 10;
+            left: 130px;
+            position: absolute;}
+        
+        form{
+           margin-top: 50px;
+           font-size: 10px;}
+        
+        input.nombre{ 
+            margin-left: 5px;
+            display: block;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            width: 500px;
+            background-color: darkred;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;}
+        
+        input.direccion{
+            margin-top: 5px;
+            margin-left: 5px;
+            display: block;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            width: 150px;
+            background-color: darkred;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;}
+        
+        input.numero{
+            margin-top: 5px;
+            margin-left: 5px;
+            display: block;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            width: 100px;
+            background-color: darkred;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;}
+        
+        input.telefono{
+            margin-top: 5px;
+            margin-left: 5px;
+            display: block;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            width: 300px;
+            background-color: darkred;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;}
+        
+        input.adicional{
+            margin-top: 5px;
+            margin-left: 5px;
+            display: block;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            width: 500px;
+            background-color: darkred;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;}
+
+        input{
+            border-radius: 10px;}
+            
+        div.subtotal{
+            display: block;
+            margin-top: 15px;
+            margin-left: 105px;
+            font-weight: bold;}
+        
+        div.descuento{
+            display: block;
+            margin-left: 60px;
+            margin-top: 15px;
+            font-weight: bold;}
+        
+        div.importeFinal{
+            display: block;
+            margin-left: 80px;
+            margin-top: 15px;
+            font-weight: bold;}
+        
+        .cantidad{
+            width: 30px;}
+
+        .importe{
+            width: 65px;}
+
+        div.detalle{
+            display: block;
+            padding: 5px;
+            margin-top: 15px;}
+        
+        button.confirmarPedido{
+            display: block;
+            margin-top: 35px;
+            margin-left: 350px;
+            border-bottom: black;
+            border-radius: 10px;
+            font-size: 20px;
+            color: white;
+            background-color: darkred;
+            width: 200px;}
+
+        button.confirmarPedido:active{
+            background-color: gray;}
+
+        button.botonReporte{
+            display: block;
+            border-radius: 10px;
+            font-size: 10px;
+            color: white;
+            background-color: black;
+            font-family: italic;}
+        
+        button.botonReporte:active{
+            background-color: gray;}
+        
+        button.compras{
+            display: block;
+            border-radius: 10px;
+            align-items: center;
+            font-size: 10px;
+            color: white;
+            background-color: black;
+            font-family:italic;}
+        
+        button.compras:active{
+            background-color: gray;}  
+        
+        #Nuevapestaña{
+            text-decoration: none;
+            border-bottom: black;
+            border-radius: 10px;
+            font-size: 10px;
+            color:white;
+            display: block;
+            background-color:black;}
+        
+        #confirmarimprimir{
+            text-decoration: none;
+            color: white;}
+        
+        button.masFilas{
+            margin-left: 500px;
+            height: 60px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            background-color: white;}
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Logo maxi pizzas.jpg" alt="Logomaxipizzas">
+        
+        <nav class="encabezado">
+            
+            <ul>
+                <button class="botonReporte" onclick= redirect(1)>REPORTE</button>
+                <li><a href="#">PIZZAS</a>
+                <ul>
+                    <li><a href="#">MUZZA</a></li>
+                    <li><a href="#">SIMPLE</a>
+                        <ul class="Simples">
+                            <li><a href="#">JAMON</a></li>
+                            <li><a href="#">PANCETA</a></li>
+                            <li><a href="#">ACEITUNAS</a></li>
+                            <li><a href="#">MIX DE CEBOLLAS</a></li>
+                            <li><a href="#">LONGANIZA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">GOURMET</a>
+                        <ul class="Gourmet">
+                             <li><a href="#">RUCULA Y JAMON CRUDO</a></li>
+                             <li><a href="#">TOMATE Y ALBAHACA</a></li>
+                             <li><a href="#">HUEVO FRITO, PAPAS Y PANCETA</a></li>
+                             <li><a href="#">4 QUESOS</a></li>
+                             <li><a href="#">PERAS,TOCINO Y ROQUEFORT</a></li>
+                             <li><a href="#">CEB.CAR Y QUESO CABRA</a></li>
+                         </ul>
+                    </li>
+                    <li><a href="#">SUPER GUSTOS</a>
+                         <ul class="Supergustos">
+                            <li><a href="#">WALDORF</a></li>
+                            <li><a href="#">VEGETARIANA</a></li>
+                            <li><a href="#">MEXICANA</a></li>
+                            <li><a href="#">ROMPE CORAZONES</a></li>
+                         </ul>
+                    </li>
+                </ul>
+                </li>
+                <li><a href="#">PIZZAS CHICAS</a>
+                    <ul>
+                        <li><a href="#">MUZZA</a></li>
+                        <li><a href="#">SIMPLE</a>
+                            <ul class="Simples">
+                                <li><a href="#">JAMON</a></li>
+                                <li><a href="#">PANCETA</a></li>
+                                <li><a href="#">ACEITUNAS</a></li>
+                                <li><a href="#">MIX DE CEBOLLAS</a></li>
+                                <li><a href="#">LONGANIZA</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">GOURMET</a>
+                            <ul class="Gourmet">
+                                 <li><a href="#">RUCULA Y JAMON CRUDO</a></li>
+                                 <li><a href="#">TOMATE Y ALBAHACA</a></li>
+                                 <li><a href="#">HUEVO FRITO, PAPAS Y PANCETA</a></li>
+                                 <li><a href="#">4 QUESOS</a></li>
+                                 <li><a href="#">PERAS,TOCINO Y ROQUEFORT</a></li>
+                                 <li><a href="#">CEB.CAR Y QUESO CABRA</a></li>
+                             </ul>
+                        </li>
+                        <li><a href="#">SUPER GUSTOS</a>
+                             <ul class="Supergustos">
+                                <li><a href="#">WALDORF</a></li>
+                                <li><a href="#">VEGETARIANA</a></li>
+                                <li><a href="#">MEXICANA</a></li>
+                                <li><a href="#">ROMPE CORAZONES</a></li>
+                             </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">EMPANADAS</a>
+                    <ul>
+                        <li><a href="#">CARNE CEBOLLA Y MORRON</a></li>
+                        <li><a href="#">JAMON Y QUESO</a></li>
+                        <li><a href="#">QUESO Y ACEITUNAS</a></li>
+                        <li><a href="#">QUESO Y CEBOLLA</a></li>
+                        <li><a href="#">CAPRESSE</a></li>
+                        <li><a href="#">VERDURA</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">PAPAS</a>
+                    <ul>
+                        <li><a href="#">GRANDES</a></li>
+                        <li><a href="#">PEQUEÑAS</a></li>
+                        <li><a href="#">CHEDDAR</a></li>
+                        <li><a href="#">GRAMAJO</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">BEBIDAS</a>
+                    <ul>
+                        <li><a href="#">COCA COLA</a></li>
+                        <li><a href="#">LATA</a></li>
+                        <li><a href="#">LITRO</a></li>
+                        <li><a href="#">STELLA</a></li>
+                        <li><a href="#">HEINEKEN</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">EXTRAS</a>
+                    <ul>
+                        <li><a href="#">ALIOLI</a></li>
+                        <li><a href="#">GUSTO EXTRA</a></li>
+                        <li><a href="#">MAS</a></li>
+                    </ul>
+                </li>
+                <button class="compras" onclick="redirect(2)">INICIO/
+                    GASTOS</button>
+                </button>
+            </ul>
+        </nav>
+    </header>
+<div id="Formulario">        
+    <form>
+        <input class="nombre" type="text" id="name" placeholder="NOMBRE/IDENTIFICADOR">
+        <span id="identificador"></span>
+        <input class="direccion" type="text" id="domicilio" placeholder="DIRECCION"> 
+        <span id="direccion"></span>
+        <input class="numero" type="number" id="number" placeholder="N°" minlength="1" maxlength="4">
+        <span id="n"></span> 
+        <input class="telefono" id="celular" type="text" placeholder="CELULAR">
+        <span id="celular2"></span>
+        <input class="adicional" type="text" id="info" placeholder="INFO ADICIONAL">
+        <span id="info2"></span><br>
+
+    <div id="filaDetalle">
+        <div class="detalle">
+        PRODUCTO
+        <input type="text" value="">
+        CANTIDAD
+        <input class="cantidad" type="number" id="number2" min="0.5" onkeypress="comprueba(this)" value="">
+        IMPORTE
+        <input class="importe" type="text" value="">
+            </div>
+        </div>
+    <button class="masFilas" onclick="agregarLinea()" type="button"  value="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg> 
+    </button>
+
+<div class="subtotal"> SUBTOTAL
+        <input type="text" id="sbt" disabled ></div>
+    <div class="descuento"> DESCUENTO/AJUSTE
+        <input type="text" id="desc"></div>
+    <div class="importeFinal"> IMPORTE FINAL
+        <input type="text"></div>
+
+<div id="check">
+    <input type="checkbox"  id="miElementoCheckbox"> ROMINA
+    <br><input type="checkbox"  id="miElementoCheckbox2"> JUAN
+        <div id="msg"></div>
+        <div id="msg2"></div></div>
+
+<button class="confirmarPedido" onclick="redirect(3)">CONFIRMAR IMPRIMIR </button>  
+    </form>
+</div>
+<script src="validacioncamposcontacto.js"></script>
+<script>
+    function redirect(type){
+        switch (type){ 
+            case 1: window.open("ReporteVentas.html",".botonreporte", '_blank'); break;
+            case 2: window.open("CajaGastos.html",".compras", '_blank'); break;
+            case 3: window.open("ConfirmarImprimir.html",".confirmarpedido", '_blank'); break;}}
+</script>
+<script>
+    function agregarLinea() {
+   var lineas = document.getElementById("filaDetalle");
+   lineas.innerHTML += '<div class="detalle">PRODUCTO <input type="text" value=""> CANTIDAD <input class="cantidad" type="number" value=""> IMPORTE <input class="importe" type="text" value=""></div>';}
+</script>
+<script>
+var miCheckbox = document.getElementById('miElementoCheckbox');
+  var msg = document.getElementById('msg');
+
+  
+
+  miCheckbox.addEventListener('click', function() {
+    if(miCheckbox.checked) {
+      msg.innerText = 'Ok!';
+    } else {
+      msg.innerText = '';
+    }
+  });
+
+  var miCheckbox2 = document.getElementById('miElementoCheckbox2');
+  var msg2 = document.getElementById('msg2');
+
+  
+
+  miCheckbox2.addEventListener('click', function() {
+    if(miCheckbox2.checked) {
+      msg2.innerText = 'Ok!';
+    } else {
+      msg2.innerText = '';
+    }
+  });
+</script>
+
+</body>
+</html>
+
